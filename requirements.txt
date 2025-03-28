@@ -1,0 +1,12 @@
+numpy
+pandas
+scikit-learn
+xgboost
+torch
+torchvision
+matplotlib
+requests
+boto3
+python-dateutil
+pytz
+tzdata

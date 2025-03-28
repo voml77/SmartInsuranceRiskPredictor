@@ -61,12 +61,59 @@ SmartInsuranceRiskPredictor/
 
 ---
 
-## 🚀 Nächste Schritte
+## 🚀 Anwendung & Weiterentwicklung
 
-- Deployment des Modells als REST-API via FastAPI oder AWS Lambda
-- Integration des Scikit-Learn Moduls zur Risikoeinschätzung
-- GitHub Actions CI/CD für automatisiertes Training & Deployment
-- Morgen: Tests der XGBoost-Integration und Optimierung der Hyperparameter
+### 📦 Installation
+
+```bash
+pip install -r requirements.txt
+```
+
+Alternativ: Nutzung via Docker oder als AWS Lambda (siehe `lambda_py39/`)
+
+---
+
+### 🔍 Beispielaufruf – Kombiniertes Modell
+
+```bash
+python src/combine_models/predict_combined.py
+```
+
+Beispielausgabe:
+
+```
+📄 Klassen-Index-Mapping gespeichert: model/class_mapping.json  
+🔍 CNN: 01-whole (100.00%)  
+📊 XGBoost: Low Risk (91.13%)  
+🧮 Kombinierter Risiko-Score: 3.55%
+```
+
+---
+
+### 🐳 Lokaler Lambda-Test via Docker
+
+Für lokale Tests der Lambda-Funktion (z. B. XGBoost Vorhersage per REST):
+
+```bash
+cd lambda_py39
+docker build -t lambda-xgb-local .
+docker run -p 9000:8080 lambda-xgb-local
+```
+
+Dann lokal testen via:
+
+```bash
+curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" \
+  -H "Content-Type: application/json" \
+  -d '{ ... }'
+```
+
+---
+
+### ⚠️ Hinweis zu den Modellen
+
+> 📁 Die trainierten Modelle (`deep_model.pth`, `classic_model.pkl`) wurden **nicht in GitHub hochgeladen** (Dateigröße).  
+> Bei Interesse oder für Reproduktion → bitte manuell hinzufügen oder Kontakt aufnehmen.
 
 ---
 
