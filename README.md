@@ -120,7 +120,7 @@ curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" \
 ## 👨‍💻 Autor
 
 **Vadim Ott**  
-→ [LinkedIn](https://linkedin.com/in/vadimott)  
+→ [LinkedIn](https://www.linkedin.com/in/vadim-ott-b66429251)  
 → Data Engineer & AI Developer mit Fokus auf Cloud & MLOps
 
 ---
